@@ -14,8 +14,7 @@ describe Tag do
 
     it "should saves ids on both sides (relation by ids)" do
       post = Post.create(title: "post")
-      tag  = Tag.new(name: "tag", post_ids: [post.id])
-      tag.save
+      tag  = Tag.create(name: "tag", posts: [post])
 
       tag.reload
       post.reload
